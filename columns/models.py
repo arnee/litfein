@@ -5,6 +5,12 @@ from feincms.module.page.models import Page
 from feincms.content.richtext.models import RichTextContent
 from feincms.content.medialibrary.models import MediaFileContent
 
+import feincms_cleanse
+
+from elephantblog.models import Entry
+from feincms.content.application.models import ApplicationContent
+from elephantblog.navigation_extensions import treeinfo  # so the extensions can be found.
+
 Page.register_extensions(
     'feincms.module.page.extensions.navigation',
     'feincms.module.page.extensions.titles',
@@ -44,3 +50,26 @@ Page.create_content_type(MediaFileContent, TYPE_CHOICES=(
 ))
 
 
+Entry.register_extensions(
+    'feincms.module.extensions.datepublisher',
+)
+
+Entry.register_regions(
+    ('main', _('Main content area')),
+)
+
+Entry.create_content_type(RichTextContent,
+    cleanse=feincms_cleanse.cleanse_html, regions=('main',)
+)
+
+Entry.create_content_type(MediaFileContent, TYPE_CHOICES=(
+    ('default', _('default')),
+
+))
+
+
+# init your Page object here
+
+Page.create_content_type(ApplicationContent, APPLICATIONS=(
+        ('elephantblog.urls', 'Blog'),
+))

@@ -112,6 +112,8 @@ INSTALLED_APPS = (
     'feincms.module.page',
     'feincms.module.medialibrary',
 
+    'elephantblog',
+
     'columns'
 )
 
@@ -177,6 +179,7 @@ LOGGING = {
 SOUTH_MIGRATION_MODULES = {
     'page': 'columns.fein_migrations.page',
     'medialibrary': 'columns.fein_migrations.medialibrary',
+    'elephantblog': 'columns.fein_migrations.elephantblog',
 }
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -187,3 +190,27 @@ FEINCMS_RICHTEXT_INIT_CONTEXT = {
     "TINYMCE_JS_URL": "http://tinymce.cachefly.net/4.0/tinymce.min.js",
 }
 
+
+def elephantblog_entry_url_app(self):
+    from feincms.content.application.models import app_reverse
+    return app_reverse('elephantblog_entry_detail', 'elephantblog.urls', kwargs={
+        'year': self.published_on.strftime('%Y'),
+        'month': self.published_on.strftime('%m'),
+        'day': self.published_on.strftime('%d'),
+        'slug': self.slug,
+        })
+
+
+def elephantblog_categorytranslation_url_app(self):
+    from feincms.content.application.models import app_reverse
+    return app_reverse('elephantblog_category_detail', 'elephantblog.urls', kwargs={
+        'slug': self.slug,
+        })
+
+
+ABSOLUTE_URL_OVERRIDES = {
+    'elephantblog.entry': elephantblog_entry_url_app,
+    'elephantblog.categorytranslation': elephantblog_categorytranslation_url_app,
+}
+
+BLOG_PAGINATE_BY = 10
