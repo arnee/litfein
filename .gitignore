@@ -1,3 +1,4 @@
 *.py[co]
 litera.db
 staticfiles
+local.py
