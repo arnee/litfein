@@ -17,6 +17,7 @@ feedparser
 feincms
 feincms-elephantblog
 feincms-cleanse
+BeautifulSoup
 
 django-redis
 
