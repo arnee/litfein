@@ -8,18 +8,34 @@ from feincms.content.medialibrary.models import MediaFileContent
 Page.register_extensions(
     'feincms.module.page.extensions.navigation',
     'feincms.module.page.extensions.titles',
-    'feincms.module.extensions.translations',
+    'feincms.module.extensions.seo',
+    'feincms.module.extensions.featured',
+    'feincms.module.page.extensions.excerpt',
+    #'feincms.module.extensions.translations',
     'feincms.module.extensions.datepublisher',
     ) # Example set of extensions
 
-Page.register_templates({
-    'title': _('Standard template'),
-    'path': 'base.html',
-    'regions': (
-        ('main', _('Main content area')),
-        #('sidebar', _('Sidebar'), 'inherited'),
+
+Page.register_templates(
+    {
+        'key': 'one-col',
+        'title': _('One column template'),
+        'path': 'one_column_page.html',
+        'regions': (
+            ('col1', _('Main column')),
         ),
-    })
+    },
+    {
+        'key': 'two-cols',
+        'title': _('Two columns template'),
+        'path': 'two_columns_page.html',
+        'regions': (
+            ('coll', _('Left column')),
+            ('colr', _('Right column')),
+        ),
+    },
+
+)
 
 Page.create_content_type(RichTextContent)
 Page.create_content_type(MediaFileContent, TYPE_CHOICES=(

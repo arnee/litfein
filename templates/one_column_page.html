@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static applicationcontent_tags feincms_tags feincms_page_tags %}
+
+{% block content %}
+    <div class="col-12">
+        {% feincms_render_region feincms_page "col1" request %}
+    </div>
+{% endblock %}
