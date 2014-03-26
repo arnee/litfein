@@ -2,7 +2,7 @@ django
 
 django-storages
 boto
-dj-static
+-e git+git://github.com/kennethreitz/dj-static.git#egg=dj-static
 
 psycopg2
 south
