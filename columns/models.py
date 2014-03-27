@@ -1,4 +1,3 @@
-from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from feincms.module.page.models import Page
@@ -9,7 +8,9 @@ import feincms_cleanse
 
 from elephantblog.models import Entry
 from feincms.content.application.models import ApplicationContent
-from elephantblog.navigation_extensions import treeinfo  # so the extensions can be found.
+from elephantblog.navigation_extensions import treeinfo
+from form_designer.models import FormContent
+
 
 Page.register_extensions(
     'feincms.module.page.extensions.navigation',
@@ -17,9 +18,8 @@ Page.register_extensions(
     'feincms.module.extensions.seo',
     'feincms.module.extensions.featured',
     'feincms.module.page.extensions.excerpt',
-    #'feincms.module.extensions.translations',
     'feincms.module.extensions.datepublisher',
-    ) # Example set of extensions
+    )
 
 
 Page.register_templates(
@@ -48,6 +48,10 @@ Page.create_content_type(MediaFileContent, TYPE_CHOICES=(
     ('default', _('default')),
     ('lightbox', _('lightbox')),
 ))
+Page.create_content_type(FormContent)
+Page.create_content_type(ApplicationContent, APPLICATIONS=(
+    ('elephantblog.urls', 'Blog'),
+))
 
 
 Entry.register_extensions(
@@ -58,18 +62,13 @@ Entry.register_regions(
     ('main', _('Main content area')),
 )
 
-Entry.create_content_type(RichTextContent,
-    cleanse=feincms_cleanse.cleanse_html, regions=('main',)
+Entry.create_content_type(
+    RichTextContent,
+    cleanse=feincms_cleanse.cleanse_html,
+    regions=('main',)
 )
 
 Entry.create_content_type(MediaFileContent, TYPE_CHOICES=(
     ('default', _('default')),
 
-))
-
-
-# init your Page object here
-
-Page.create_content_type(ApplicationContent, APPLICATIONS=(
-        ('elephantblog.urls', 'Blog'),
 ))

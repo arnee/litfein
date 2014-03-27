@@ -18,6 +18,7 @@ feincms
 feincms-elephantblog
 beautifulsoup
 feincms-cleanse
+form_designer
 
 django-redis
 

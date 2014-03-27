@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'feincms.module.medialibrary',
 
     'elephantblog',
+    'form_designer',
 
     'columns'
 )
@@ -180,6 +181,7 @@ SOUTH_MIGRATION_MODULES = {
     'page': 'columns.fein_migrations.page',
     'medialibrary': 'columns.fein_migrations.medialibrary',
     'elephantblog': 'columns.fein_migrations.elephantblog',
+    'form_designer': 'columns.fein_migrations.form_designer',
 }
 
 # SECURITY WARNING: keep the secret key used in production secret!
