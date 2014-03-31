@@ -23,7 +23,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "")
 AWS_S3_SECURE_URLS = False
 AWS_QUERYSTRING_AUTH = False
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'columns.storage.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 MEDIA_URL_PREFIX = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com'
 
