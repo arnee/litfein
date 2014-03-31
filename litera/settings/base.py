@@ -187,9 +187,15 @@ SOUTH_MIGRATION_MODULES = {
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "dfaksdjf34+/W!%/345/+!%C+5fRFCWFACSAFasdfasdEEEEEFasdFsdFas.s-.,344SDFAdfa{ew''sfq3352425t5!+%.-,4r324fASDVDFVre")
 
-FEINCMS_RICHTEXT_INIT_TEMPLATE = 'admin/content/richtext/init_tinymce4.html'
+#FEINCMS_RICHTEXT_INIT_TEMPLATE = 'admin/content/richtext/init_tinymce4.html'
+#FEINCMS_RICHTEXT_INIT_CONTEXT = {
+#    "TINYMCE_JS_URL": "http://tinymce.cachefly.net/4.0/tinymce.min.js",
+#}
+
+FEINCMS_RICHTEXT_INIT_TEMPLATE = 'admin/content/richtext/init_ckeditor_litera.html'
 FEINCMS_RICHTEXT_INIT_CONTEXT = {
-    "TINYMCE_JS_URL": "http://tinymce.cachefly.net/4.0/tinymce.min.js",
+    'CKEDITOR_JS_URL': os.path.join(STATIC_URL, 'js/ckeditor/ckeditor.js'),
+    'CKEDITOR_JS_CONFIG_URL': os.path.join(STATIC_URL, 'js/ckeditor/config.js'),
 }
 
 
