@@ -1,7 +1,7 @@
 from django.conf import settings
 import os
 
-MEDIA_PATH_PREFIX = os.path.join(settings.MEDIA_URL_PREFIX, settings.MEDIA_URL)
+MEDIA_PATH_PREFIX = settings.MEDIA_URL_PREFIX + settings.MEDIA_URL
 
 def media_urls(request):
     return {
