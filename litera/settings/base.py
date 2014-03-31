@@ -56,6 +56,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 MEDIA_URL = '/media/'
+MEDIA_URL_PREFIX = ''
 
 
 STATICFILES_FINDERS = (
@@ -92,6 +93,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'columns.context_processors.media_urls',
 )
 
 # Application definition

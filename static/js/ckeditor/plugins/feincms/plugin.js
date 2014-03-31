@@ -21,7 +21,7 @@ CKEDITOR.plugins.add( 'feincms',
                     function insertMediaFile(imageUrl) {
                         // Insert the imageUrl into the document. Style represents some standard props.
                         // http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.editor.html#insertHtml
-                        editor.insertHtml('<img src="/media/' + imageUrl + '" style="float:left;margin-right:10px;margin-bottom:10px;width:200px;" />');
+                        editor.insertHtml('<img src="' + document.MEDIA_PATH_PREFIX + imageUrl + '" style="float:left;margin-right:10px;margin-bottom:10px;width:200px;" />');
                     }
 
                     var imageUrl;
