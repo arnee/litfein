@@ -14,12 +14,12 @@ from form_designer.models import FormContent
 
 Page.register_extensions(
     'feincms.module.page.extensions.navigation',
-    'feincms.module.page.extensions.titles',
+    #'feincms.module.page.extensions.titles',
     'feincms.module.extensions.seo',
-    'feincms.module.extensions.featured',
-    'feincms.module.page.extensions.excerpt',
-    'feincms.module.extensions.datepublisher',
-    )
+    #'feincms.module.extensions.featured',
+    #'feincms.module.page.extensions.excerpt',
+    #'feincms.module.extensions.datepublisher',
+)
 
 
 Page.register_templates(
