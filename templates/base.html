@@ -16,7 +16,8 @@
         <title>{{ feincms_page.title }}</title>
 
         <link rel="stylesheet" href="{% static "css/litera.css" %}">
-
+        <meta name="description" content="{{ feincms_page.meta_description }}">
+        <meta name="keywords" content="{{ feincms_page.meta_keywords }}">
         {% block extra_css %}{% endblock %} {# Override this block in individual templates in order to add stylesheets on a template by template basis #}
 
     </head>
