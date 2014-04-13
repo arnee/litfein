@@ -25,7 +25,7 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ["*", ]
 
 ADMINS = (
-    #("name", "email"),
+    # ("name", "email"),
 )
 MANAGERS = ADMINS
 
@@ -62,13 +62,11 @@ MEDIA_URL_PREFIX = ''
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_DIRS = (
@@ -188,13 +186,12 @@ SOUTH_MIGRATION_MODULES = {
     'form_designer': 'columns.fein_migrations.form_designer',
 }
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "dfaksdjf34+/W!%/345/+!%C+5fRFCWFACSAFasdfasdEEEEEFasdFsdFas.s-.,344SDFAdfa{ew''sfq3352425t5!+%.-,4r324fASDVDFVre")
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "ACSAFasdfasdEEEEEFasdFsdFas.s-.,344SDFAdfa{ew''sfq3352425t5!+%.-,4r324fASDVDFVre"
+)
 
-#FEINCMS_RICHTEXT_INIT_TEMPLATE = 'admin/content/richtext/init_tinymce4.html'
-#FEINCMS_RICHTEXT_INIT_CONTEXT = {
-#    "TINYMCE_JS_URL": "http://tinymce.cachefly.net/4.0/tinymce.min.js",
-#}
+FEINCMS_USE_PAGE_ADMIN = False
 
 FEINCMS_RICHTEXT_INIT_TEMPLATE = 'admin/content/richtext/init_ckeditor_litera.html'
 FEINCMS_RICHTEXT_INIT_CONTEXT = {
@@ -215,9 +212,10 @@ def elephantblog_entry_url_app(self):
 
 def elephantblog_categorytranslation_url_app(self):
     from feincms.content.application.models import app_reverse
-    return app_reverse('elephantblog_category_detail', 'elephantblog.urls', kwargs={
-        'slug': self.slug,
-        })
+    return app_reverse(
+        'elephantblog_category_detail', 'elephantblog.urls',
+        kwargs={'slug': self.slug, }
+    )
 
 
 ABSOLUTE_URL_OVERRIDES = {

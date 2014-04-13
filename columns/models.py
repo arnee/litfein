@@ -19,6 +19,7 @@ Page.register_extensions(
     #'feincms.module.extensions.featured',
     #'feincms.module.page.extensions.excerpt',
     #'feincms.module.extensions.datepublisher',
+    'columns.background_extension',
 )
 
 

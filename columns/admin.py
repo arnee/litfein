@@ -1,5 +1,8 @@
 from django.contrib import admin
 
+from feincms.module.page.models import Page
+from feincms.module.page.admin import PageAdmin
+
 from feincms.module.medialibrary.models import Category, MediaFile
 from feincms.module.medialibrary.modeladmins import\
     CategoryAdmin, MediaFileAdmin
@@ -33,5 +36,10 @@ class EntryCategoryNoTransAdmin(EntryCategoryAdmin):
     inlines = [EntryCategoryNoTransInline]
 
 
+class PageAdminExtra(PageAdmin):
+    raw_id_fields = PageAdmin.raw_id_fields + ["background_image",]
+
+
 admin.site.register(MediaFile, MediaFileNoTransAdmin)
 admin.site.register(EntryCategory, EntryCategoryNoTransAdmin)
+admin.site.register(Page, PageAdminExtra)
