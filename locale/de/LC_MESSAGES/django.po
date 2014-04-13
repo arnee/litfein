@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-12 21:39+0000\n"
+"POT-Creation-Date: 2014-04-13 02:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: columns/models.py:28
+#: columns/background_extension.py:23
+msgid "Background image"
+msgstr ""
+
+#: columns/models.py:29
 msgid "One column template"
 msgstr ""
 
-#: columns/models.py:31
+#: columns/models.py:32
 msgid "Main column"
 msgstr ""
 
-#: columns/models.py:36
+#: columns/models.py:37
 msgid "Two columns template"
 msgstr ""
 
-#: columns/models.py:39
+#: columns/models.py:40
 msgid "Left column"
 msgstr ""
 
-#: columns/models.py:40
+#: columns/models.py:41
 msgid "Right column"
 msgstr ""
 
-#: columns/models.py:48 columns/models.py:72
+#: columns/models.py:49 columns/models.py:73
 msgid "default"
 msgstr ""
 
-#: columns/models.py:49
-msgid "lightbox"
-msgstr ""
-
-#: columns/models.py:62
+#: columns/models.py:63
 msgid "Main content area"
 msgstr ""
