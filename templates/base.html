@@ -23,7 +23,7 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}"> {# Override this block to set custom body classes on a template by template basis #}
-        <div id="frame">
+        <div id="frame" {% if feincms_page.background_image_id %}style="background-image: url('{{ feincms_page.background_image.file.url }}');"{% endif %}>
             <div id="content">
                 <div id="logo">
                     <a href="/"><img src="{% static "img/logo.png" %}"></a>
