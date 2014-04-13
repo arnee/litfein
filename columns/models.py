@@ -47,8 +47,8 @@ Page.register_templates(
 Page.create_content_type(RichTextContent)
 Page.create_content_type(MediaFileContent, TYPE_CHOICES=(
     ('default', _('default')),
-    ('lightbox', _('lightbox')),
 ))
+
 Page.create_content_type(FormContent)
 Page.create_content_type(ApplicationContent, APPLICATIONS=(
     ('elephantblog.urls', 'Blog'),
