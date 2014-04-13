@@ -82,6 +82,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -117,7 +118,8 @@ INSTALLED_APPS = (
     'elephantblog',
     'form_designer',
 
-    'columns'
+    'columns',
+    'debug_toolbar',
 )
 
 
@@ -224,3 +226,5 @@ ABSOLUTE_URL_OVERRIDES = {
 }
 
 BLOG_PAGINATE_BY = 10
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False

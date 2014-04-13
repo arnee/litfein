@@ -24,3 +24,5 @@ form_designer
 django-redis
 
 gunicorn
+
+django-debug-toolbar
